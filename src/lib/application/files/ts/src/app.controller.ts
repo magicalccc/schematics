@@ -3,7 +3,6 @@ import { ApiResponse } from '@nestjs/swagger';
 import { AppService } from './app.service';
 import { RootApiResponse } from './common/dtos/root-api.response';
 import { ServerSettings } from './system-settings/entities/server-settings/server-settings.entity';
-
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}

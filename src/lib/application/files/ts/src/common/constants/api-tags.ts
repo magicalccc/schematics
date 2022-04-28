@@ -1,5 +1,5 @@
 export enum <%= classify(name) %>OpenApi {
-  <%= classify(name) %> = 'Note factory user API',
+  <%= classify(name) %> = '<%= classify(name) %> user API',
 }
 
 export enum CommonOpenApi {

@@ -46,30 +46,7 @@
         "graphql-schema-first",
         "microservice",
         "ws"
-      ],
-      "x-prompt": {
-        "message": "What transport layer do you use?",
-        "type": "list",
-        "items": [
-          { "value": "rest", "label": "REST API" },
-          {
-            "value": "graphql-code-first",
-            "label": "GraphQL (code first)"
-          },
-          {
-            "value": "graphql-schema-first",
-            "label": "GraphQL (schema first)"
-          },
-          {
-            "value": "microservice",
-            "label": "Microservice (non-HTTP)"
-          },
-          {
-            "value": "ws",
-            "label": "WebSockets"
-          }
-        ]
-      }
+      ]
     },
     "skipImport": {
       "type": "boolean",
@@ -79,11 +56,7 @@
     "crud": {
       "type": "boolean",
       "description": "When true, CRUD entry points are generated.",
-      "default": true,
-      "x-prompt": {
-        "message": "Would you like to generate CRUD entry points?",
-        "type": "confirmation"
-      }
+      "default": false
     }
   },
   "required": ["name"]

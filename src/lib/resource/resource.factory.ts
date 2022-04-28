@@ -76,15 +76,13 @@ function generate(options: ResourceOptions): Source {
         if (path.endsWith('.dto.ts')) {
           return (
             options.type !== 'graphql-code-first' &&
-            options.type !== 'graphql-schema-first' &&
-            options.crud
+            options.type !== 'graphql-schema-first'
           );
         }
         if (path.endsWith('.input.ts')) {
           return (
-            (options.type === 'graphql-code-first' ||
-              options.type === 'graphql-schema-first') &&
-            options.crud
+            options.type === 'graphql-code-first' ||
+            options.type === 'graphql-schema-first'
           );
         }
         if (
@@ -97,7 +95,7 @@ function generate(options: ResourceOptions): Source {
           );
         }
         if (path.endsWith('.graphql')) {
-          return options.type === 'graphql-schema-first' && options.crud;
+          return options.type === 'graphql-schema-first';
         }
         if (
           path.endsWith('controller.ts') ||
@@ -112,7 +110,7 @@ function generate(options: ResourceOptions): Source {
           // Entity class file workaround
           // When an invalid glob path for entities has been specified (on the application part)
           // TypeORM was trying to load a template class
-          return options.crud;
+          return false;
         }
         return true;
       }),
